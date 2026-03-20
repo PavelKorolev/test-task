@@ -4,7 +4,8 @@ from datetime import datetime
 
 def add_attributes(input):
     if "id" in input:
-         input.update({"version": input.get("version") + 1, 
+         input.update({"version": input.get("version") + 1,
+         "modified_at": str(datetime.now()),
          "modified_by": os.environ.get("USER", "unknown")})
     else:
         input.update({"id": str(uuid.uuid4()), 

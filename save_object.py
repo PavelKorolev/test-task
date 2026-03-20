@@ -7,6 +7,10 @@ from save_json import save_json
 from versions import versions
 
 
+if len(sys.argv) < 2:
+    print("Usage: python save_object.py input.json")
+    exit()
+
 result1 = get_json(sys.argv[1])
 if result1 is None:
     exit()
